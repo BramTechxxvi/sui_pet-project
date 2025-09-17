@@ -15,7 +15,7 @@ module sui_pet::sui_pet {
         id: UID,
         name: String,
         species: Species,
-        level: Level
+        level: Level,
         is_hungry: bool,
     }
 }
