@@ -1,8 +1,14 @@
-Module: sui_pet
-module sui_pet::sui_pet;
+module sui_pet::sui_pet {
+    use std::string::String;
 
+    public enum Species has copy, drop{
+        Empty,
+        String(String),
+    }
 
-// For Move coding conventions, see
-// https://docs.sui.io/concepts/sui-move-concepts/conventions
-
-
+    public struct Pet has key {
+        id: UID,
+        name: String,
+        species: Species,
+    }
+}
