@@ -18,4 +18,6 @@ module sui_pet::sui_pet {
         level: Level,
         is_hungry: bool,
     }
+
+    public fun new_level(level:String) : Level{}
 }
