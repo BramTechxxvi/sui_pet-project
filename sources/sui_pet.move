@@ -7,14 +7,15 @@ module sui_pet::sui_pet {
     }
 
     public enum Level has copy, drop, store {
-        Baby,
-        Adult,
+        Empty,
+        String(String),
     }
 
     public struct Pet has key {
         id: UID,
         name: String,
         species: Species,
+        level: Level
         is_hungry: bool,
     }
 }
