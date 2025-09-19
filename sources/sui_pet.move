@@ -18,17 +18,27 @@ module sui_pet::sui_pet {
         id: UID,
         name: String,
         species: Species,
-        level: Level
+        level: Level,
         is_hungry:bool
     }
 
     public fun new_species(species:String) : Species{
         let allowed_species = vector<String>[
             string::utf8(b"MAMMAL"), string::utf8(b"AVES"),
-            string:;utf8(b"PISCES")
+            string::utf8(b"PISCES")
         ];
         let mut index = 0;
-        while(index < allowed_species.lefngth)   
+        while(index < allowed_species.length()){
+            if(allowed_species[index] == species){
+                return Species::String(species);
+            };
+            index = index + 1;
+        };
+        Species::Empty   
+    }
+
+    public fun new_level(level:String) :Level{
+        Level::String(level)
     }
 
 
