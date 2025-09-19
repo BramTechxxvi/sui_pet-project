@@ -23,7 +23,11 @@ module sui_pet::sui_pet {
     }
 
     public fun new_species(species:String) : Species{
-        let allowed_species = vector<String>
+        let allowed_species = vector<String>[
+            string::utf8(b"MAMMAL"), string::utf8(b"AVES"),
+            string:;utf8(b"PISCES")
+        ];
+        let mut index = 0;
     }
 
 
