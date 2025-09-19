@@ -76,5 +76,10 @@ module sui_pet::sui_pet {
         test-scenerio::end(scenario);
     }
 
+    #[test]
+    public fun test_feed_pet(){
+        
+    }
+
 
 }
