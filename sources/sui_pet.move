@@ -41,5 +41,17 @@ module sui_pet::sui_pet {
         Level::String(level)
     }
 
+    #[allow(lint(self_tranfer))]
+    public fun new_pet(create_pet_request:dto::CreatePetRequest, ctx: &mut TxContext) {
+        let pet = Pet {
+            id:object::new(ctx),
+            name:create_pet_request::dto::get_name(&create_pet_request),
+            species:species,
+            level:level,
+            is_hungry:true
+        };
+        pet
+    }
+
 
 }
