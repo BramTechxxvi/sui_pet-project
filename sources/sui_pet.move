@@ -58,5 +58,10 @@ module sui_pet::sui_pet {
         tranfer::public_transfer(pet, ctx.sender());
     }
 
+    #[test]
+    public fun test_create_new_species(){
+        
+    }
+
 
 }
