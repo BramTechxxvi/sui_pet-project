@@ -3,7 +3,7 @@ module sui_pet::sui_pet {
     use std::{debug, string};
     use sui_pet::dto;
     #[test_only]
-    use sui::test_scenerio;
+    use sui::test_scenario;
 
     public enum Species has copy, drop, store {
         Empty,
@@ -64,6 +64,16 @@ module sui_pet::sui_pet {
         let specie = string::utf8(b"AVES");
         let species = new_species(specie);
         debug::print(&species);
+    }
+
+    #[test]
+    public fun test_mint_pet(){
+        let sender_address = @0x3;
+        let mut scenario = test_scenerio::begin(sender_address);
+        let ctx = scenario.ctx();
+        let request = dto::create_pet_request(string::utf8(b"Tommy"), ctx);
+        new_pet(request, ctx);
+        test-scenerio::end(scenario);
     }
 
 
