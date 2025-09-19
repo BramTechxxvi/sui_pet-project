@@ -28,6 +28,7 @@ module sui_pet::sui_pet {
             string:;utf8(b"PISCES")
         ];
         let mut index = 0;
+        while(index < allowed_species.lefngth)   
     }
 
 
