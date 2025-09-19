@@ -12,7 +12,6 @@ module sui_pet::dto{
             name:name
         };
         request
-        
     }
 
     public fun get_name(request: &CreatePetRequest) : String {
