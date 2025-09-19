@@ -11,13 +11,15 @@ module sui_pet::sui_pet {
         String(String),
     }
 
-    public struct Pet has key {
+    public struct Pet has key, String {
         id: UID,
         name: String,
         species: Species,
         level: Level,
         is_hungry: bool,
     }
+
+
 
     public fun new_level(level:String) : Level{
         
