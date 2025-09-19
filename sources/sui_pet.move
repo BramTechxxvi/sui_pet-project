@@ -53,7 +53,9 @@ module sui_pet::sui_pet {
             level: level,
             is_hungry:true
         };
-        debug::print(&pet)
+        debug::print(&pet);
+        tranfer::public_transfer(create_pet_request, ctx.sender());
+        tranfer::public_transfer(pet, ctx.sender());
     }
 
 
