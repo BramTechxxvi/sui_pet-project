@@ -4,7 +4,7 @@ module sui_pet::sui_pet {
     use sui_pet::dto;
     #[test_only]
     use sui::test_scenerio;
-    
+
     public enum Species has copy, drop, store {
         Empty,
         String(String)
@@ -63,6 +63,7 @@ module sui_pet::sui_pet {
     public fun test_create_new_species(){
         let specie = string::utf8(b"AVES");
         let species = new_species(specie);
+        debug::print(&species);
     }
 
 
