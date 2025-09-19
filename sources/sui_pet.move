@@ -22,5 +22,9 @@ module sui_pet::sui_pet {
         is_hungry:bool
     }
 
+    public fun new_species(species:String) : Species{
+        let allowed_species = vector<String>
+    }
+
 
 }
