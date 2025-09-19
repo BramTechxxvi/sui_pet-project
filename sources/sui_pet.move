@@ -60,7 +60,8 @@ module sui_pet::sui_pet {
 
     #[test]
     public fun test_create_new_species(){
-        
+        let specie = string::utf8(b"AVES");
+        let species = new_species(specie);
     }
 
 
