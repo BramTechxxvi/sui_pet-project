@@ -26,11 +26,11 @@ module sui_pet::sui_pet {
         if (specie == mammal) {
             Species::String(species)
         } else {
-            abort 1;
+            abort 1
         }
     }
 
     public fun new_level(level:String) : Level{
-        
+        Level::String(level)
     }
 }
